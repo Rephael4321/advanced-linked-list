@@ -55,7 +55,7 @@ class LinkedList:
                 node.next = new_node
                 return
         
-        raise Exception(f"None with data {target_node_data} not found")
+        raise Exception(f"Node with data {target_node_data} not found")
 
     def addBefore(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
@@ -72,7 +72,7 @@ class LinkedList:
                 return
             prev_node = node
         
-        raise Exception(f"None with data {target_node_data} not found")
+        raise Exception(f"Node with data {target_node_data} not found")
 
     def removeNode(self, target_node_data: str) -> None:
         if self.head is None:
