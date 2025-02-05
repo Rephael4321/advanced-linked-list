@@ -5,7 +5,7 @@ class Node:
         self.data = data
         self.next = None
     
-    def __repr__(self) -> None:
+    def __repr__(self) -> str:
         return self.data
 
 class LinkedList:
@@ -92,6 +92,18 @@ class LinkedList:
 
         raise Exception(f"Node with data {target_node_data} not found")
 
+    def reverse(self):
+        prev_node = None
+        node = self.head
+        while node is not None:
+            if node.next is None:
+                self.head = node
+            next_node = node.next
+            node.next = prev_node
+            prev_node = node
+            node = next_node
+
+
 if __name__ == "__main__":
     llist = LinkedList("a b c d e f g".split())
     llist.addFirst(Node("1"))
@@ -99,4 +111,6 @@ if __name__ == "__main__":
     llist.addAfter("c", Node("X"))
     llist.addBefore("g", Node("Y"))
     llist.removeNode("a")
+    print(llist)
+    llist.reverse()
     print(llist)
